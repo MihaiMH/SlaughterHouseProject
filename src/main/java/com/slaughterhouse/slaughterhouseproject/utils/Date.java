@@ -1,6 +1,6 @@
 package com.slaughterhouse.slaughterhouseproject.utils;
 
-public class Date implements DateInterface
+public class Date
 {
   private int dd;
   private int mm;
@@ -13,25 +13,21 @@ public class Date implements DateInterface
 
   public Date(String date)
   {
-    String dd_string = date.substring(0,2);
-    date = date.replace(dd_string+"-", "");
-    String mm_string = date.substring(0,2);
-    date = date.replace(mm_string+"-", "");
-    String yyyy_string = date.substring(0,4);
+    String[] aux = date.split("-");
 
-    dd = Integer.parseInt(dd_string);
-    mm = Integer.parseInt(mm_string);
-    yyyy = Integer.parseInt(yyyy_string);
+    dd = Integer.parseInt(aux[0]);
+    mm = Integer.parseInt(aux[1]);
+    yyyy = Integer.parseInt(aux[2]);
   }
 
-  @Override public void setFullDate(int dd, int mm, int yyyy)
+  public void setFullDate(int dd, int mm, int yyyy)
   {
     this.dd = dd;
     this.mm = mm;
     this.yyyy = yyyy;
   }
 
-  @Override public boolean equalDate(DateInterface dateInterface)
+  public boolean equalDate(Date dateInterface)
   {
     if (dateInterface.getDay() == dd && dateInterface.getMonth() == mm
         && dateInterface.getYear() == yyyy)
@@ -41,32 +37,32 @@ public class Date implements DateInterface
     return false;
   }
 
-  @Override public void setDay(int dd)
+  public void setDay(int dd)
   {
     this.dd = dd;
   }
 
-  @Override public void setMonth(int mm)
+  public void setMonth(int mm)
   {
     this.mm = mm;
   }
 
-  @Override public void setYear(int yyyy)
+  public void setYear(int yyyy)
   {
     this.yyyy = yyyy;
   }
 
-  @Override public int getDay()
+  public int getDay()
   {
     return dd;
   }
 
-  @Override public int getMonth()
+  public int getMonth()
   {
     return mm;
   }
 
-  @Override public int getYear()
+  public int getYear()
   {
     return yyyy;
   }

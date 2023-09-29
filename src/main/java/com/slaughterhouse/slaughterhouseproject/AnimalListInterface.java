@@ -1,17 +1,17 @@
 package com.slaughterhouse.slaughterhouseproject;
 
-import com.slaughterhouse.slaughterhouseproject.utils.DateInterface;
+import com.slaughterhouse.slaughterhouseproject.utils.Date;
 
 import java.util.ArrayList;
 
 public interface AnimalListInterface
 {
-  ArrayList<AnimalInterface> getAnimals();
-  void setAnimals(ArrayList<AnimalInterface> animals);
-  boolean removeAnimal(AnimalInterface animal);
+  ArrayList<Animal> getAnimals();
+  void setAnimals(ArrayList<Animal> animals);
+  boolean removeAnimal(Animal animal);
   boolean removeAnimal(int id);
-  void addAnimal(AnimalInterface animal);
-  ArrayList<AnimalInterface> getAnimalsByDate(DateInterface date);
-  ArrayList<AnimalInterface> getAnimalsByType(String type);
-  AnimalInterface getAnimalByID(int id);
+  void addAnimal(Animal animal);
+  ArrayList<Animal> getAnimalsByDate(Date date);
+  ArrayList<Animal> getAnimalsByType(String type);
+  Animal getAnimalByID(int id);
 }

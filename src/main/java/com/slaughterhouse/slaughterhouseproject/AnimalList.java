@@ -1,41 +1,41 @@
 package com.slaughterhouse.slaughterhouseproject;
 
-import com.slaughterhouse.slaughterhouseproject.utils.DateInterface;
+import com.slaughterhouse.slaughterhouseproject.utils.Date;
 
 import java.util.ArrayList;
 
 public class AnimalList implements AnimalListInterface
 {
-  private ArrayList<AnimalInterface> animals;
+  private ArrayList<Animal> animals;
 
   public AnimalList()
   {
     this.animals = new ArrayList<>();
   }
 
-  public AnimalList(ArrayList<AnimalInterface> animals)
+  public AnimalList(ArrayList<Animal> animals)
   {
     this.animals = animals;
   }
 
-  public ArrayList<AnimalInterface> getAnimals()
+  public ArrayList<Animal> getAnimals()
   {
     return animals;
   }
 
-  public void setAnimals(ArrayList<AnimalInterface> animals)
+  public void setAnimals(ArrayList<Animal> animals)
   {
     this.animals = animals;
   }
 
-  public boolean removeAnimal(AnimalInterface animal)
+  public boolean removeAnimal(Animal animal)
   {
     return animals.remove(animal);
   }
 
   public boolean removeAnimal(int id)
   {
-    for (AnimalInterface animal : animals)
+    for (Animal animal : animals)
     {
       if (animal.getId() == id)
       {
@@ -45,15 +45,15 @@ public class AnimalList implements AnimalListInterface
     return false;
   }
 
-  public void addAnimal(AnimalInterface animal)
+  public void addAnimal(Animal animal)
   {
     animals.add(animal);
   }
 
-  public ArrayList<AnimalInterface> getAnimalsByDate(DateInterface date)
+  public ArrayList<Animal> getAnimalsByDate(Date date)
   {
-    ArrayList<AnimalInterface> temp = new ArrayList<>();
-    for (AnimalInterface animal : animals)
+    ArrayList<Animal> temp = new ArrayList<>();
+    for (Animal animal : animals)
     {
       if (animal.getDateArrived().equalDate(date))
         temp.add(animal);
@@ -61,10 +61,10 @@ public class AnimalList implements AnimalListInterface
     return temp;
   }
 
-  public ArrayList<AnimalInterface> getAnimalsByType(String type)
+  public ArrayList<Animal> getAnimalsByType(String type)
   {
-    ArrayList<AnimalInterface> temp = new ArrayList<>();
-    for (AnimalInterface animal : animals)
+    ArrayList<Animal> temp = new ArrayList<>();
+    for (Animal animal : animals)
     {
       if (animal.getType().equals(type))
         temp.add(animal);
@@ -72,9 +72,9 @@ public class AnimalList implements AnimalListInterface
     return temp;
   }
 
-  @Override public AnimalInterface getAnimalByID(int id)
+  @Override public Animal getAnimalByID(int id)
   {
-    for (AnimalInterface animal : animals)
+    for (Animal animal : animals)
     {
       if (animal.getId() == id)
         return animal;

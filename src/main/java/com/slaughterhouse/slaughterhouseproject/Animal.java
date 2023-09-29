@@ -1,14 +1,13 @@
 package com.slaughterhouse.slaughterhouseproject;
 
 import com.slaughterhouse.slaughterhouseproject.utils.Date;
-import com.slaughterhouse.slaughterhouseproject.utils.DateInterface;
 
-public class Animal implements AnimalInterface
+public class Animal
 {
   private int id;
   private double weight;
   private String type;
-  private DateInterface dateArrived;
+  private Date dateArrived;
 
   public Animal(double weight, String type){
     this.id = -1;
@@ -46,12 +45,12 @@ public class Animal implements AnimalInterface
     return weight;
   }
 
-  public void setDateArrived(DateInterface dateArrived)
+  public void setDateArrived(Date dateArrived)
   {
     this.dateArrived = dateArrived;
   }
 
-  public DateInterface getDateArrived()
+  public Date getDateArrived()
   {
     return dateArrived;
   }
